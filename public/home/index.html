@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="public/home/assets/javascript/contact.js"></script> <!--done-->
+    <link rel="stylesheet" href="public/home/assets/css/style.css"> <!--done-->
+    <script>
+        $(document).ready(function(){
+            $('.parallax').parallax();
+            $('.sidenav').sidenav();
+        });
+    </script>
+    <script src="public/home/assets/javascript/smoothScroll.js"></script> <!--done-->
+</head>
+<body>
+    <header>
+        <div id="top-of-page"></div>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#top-of-page" class="brand-logo"><p id="logo">Stephen Pellegrini</p></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a class="services-link" href="#services-section">Services</a></li>
+                        <li><a href="#portfolio-section">Portfolio</a></li>
+                        <li><a href="#about-section">About</a></li>
+                        <li><a href="#contact-section">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#top-of-page">Home</a></li>
+        <li><a href="#services-section">Services</a></li>
+        <li><a href="#portfolio-section">Portfolio</a></li>
+        <li><a href="#about-section">About</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+    </ul>
+    <div class="parallax-container">
+         <div class="parallax"><img class="top-image" src="public/home/assets/images/background.jpg"></div> <!--done-->
+    </div>
+    <div class="section" id="services-section">
+        <div class="row container">
+            <h2 class="header services-header">Services</h2>
+            <div class="row">
+                <div class="col l4 m12 s12">
+                    <img class="responsive-img circle" src="public/home/assets/images/frontend-240.png"> <!--done-->
+                    <h4 class="center-align black-text">Front End Development</h4> 
+                    <p class="grey-text text-darken-3 center-align">
+                        Proficient in various front-end CSS frameworks,
+                        including Bootstrap and Materialize.
+                    </p>
+                </div>
+                <div class="col l4 m12 s12">
+                    <img class="responsive-img circle" src="public/home/assets/images/backend-240.jpg"> <!--done-->
+                    <h4 class="center-align black-text">Back End Development</h4>
+                    <p class="grey-text text-darken-3 center-align">
+                        Experienced with Node.JS and Python.
+                    </p>
+                </div>  
+                <div class="col l4 m12 s12">
+                    <img class="responsive-img circle unity-pic" src="public/home/assets/images/unity240.jpg"> <!--done-->
+                    <h4 class="center-align black-text">Mobile Game Development</h4>
+                    <p class="grey-text text-darken-3 center-align">
+                        Creating mobile games for iOS and Android using Unity and C#.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img src="public/home/assets/images/background.jpg"></div> <!--done-->
+    </div>
+    <div class="section" id="portfolio-section">
+        <div class="row container">
+            <h2 class="header portfolio-header">Portfolio</h2>
+            <div class="row project-images-one">
+                <!-- <div class="valign-wrapper"> -->
+                    <div class="col l3 m12 s12">
+                        <a href="public/first-project/index.html" target="_blank"><img class="responsive-img travel-pic" src="public/home/assets/images/travel180x120.jpeg"></a> <!--done-->
+                        <a href="public/first-project/index.html" target="_blank"><h4 class="grey-text text-darken-3 center-align">Travel App</h4></a>
+                    </div>
+                    <div class="col l3 m12 s12">
+                        <a href="public/hangman/index.html" target="_blank"><img class="responsive-img hangman-pic" src="public/home/assets/images/hangman180Crop.png"></a> <!--done-->
+                        <a href="public/hangman/index.html" target="_blank"><h4 class="grey-text text-darken-3 center-align">Hangman Game</h4></a>
+                    </div>
+                    <div class="col l3 m12 s12">
+                        <a href="https://pellegrinisr.github.io/GiphyAPIProject/" target="_blank"><img class="responsive-img giphy-pic" src="public/home/assets/images/giphy180.png"></a>  <!--done-->
+                        <a href="https://pellegrinisr.github.io/GiphyAPIProject/" target="_blank"><h4 class="grey-text text-darken-3 center-align">API Project</h4></a>
+                    </div>
+                    <div class="col l3 m12 s12">
+                        <a href="https://pellegrinisr.github.io/TriviaGame" target="_blank"><img class="responsive-img quiz-pic" src="public/home/assets/images/questionMarks180x240.jpg"></a>   <!--done-->
+                        <a href="https://pellegrinisr.github.io/TriviaGame" target="_blank"> <h4 class="grey-text text-darken-3 center-align">Trivia Game</h4></a>
+                    </div>
+                <!-- </div> -->
+            </div>
+            
+            <div class="row project-images-two">
+                <!-- <div class="valign-wrapper"> -->
+                    <div class="col l3 m12 s12">
+                        <a href="https://pellegrinisr.github.io/TrainSchedule1/" target="_blank"><img class="responsive-img train-pic" src="public/home/assets/images/train180.jpg"></a> <!--done-->
+                        <a href="https://pellegrinisr.github.io/TrainSchedule1" target="_blank"><h4 class="grey-text text-darken-3 center-align">Train Schedule</h4></a>
+                    </div>
+                    
+                    <div class="col l3 m12 s12">
+                        <a href="https://pellegrinisr.github.io/CrystalCollector" target="_blank"><img class="responsive-img crystal-pic" src="public/home/assets/images/crystal180.jpg"></a> <!--done-->
+                        <a href="https://pellegrinisr.github.io/CrystalCollector" target="_blank"><h4 class="grey-text text-darken-3 center-align">Crystal Collector</h4></a>
+                    </div>
+                    <div class="col l3 m12 s12"></div>
+                    <div class="col l3 m12 s12"></div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img class="top-image" src="public/home/assets/images/background.jpg"></div> <!--done-->
+    </div>
+    <div class="section" id="about-section">
+        <div class="row container">
+            <h2 class="header about-header">About</h2>
+            <div class="col s12">
+                <img class="headshot" src="public/home/assets/images/headshot.png" alt="Profile Picture"> <!--done-->
+                <p class="grey-text text-darken-3">
+                My name is Stephen Pellegrini. I currently work in the IT department at Los Angeles
+                Trade Tech College.
+                </p>
+                <p class="grey-text text-darken-3">
+                After I finish the coding bootcamp at the UCLA Extension, I hope to get a job
+                as a full stack web developer in Los Angeles.
+                </p>
+                <p class="grey-text text-darken-3">
+                I grew up in Orange County, California, in the city of Yorba Linda. In high school,
+                I got my first exposure to computer programming in an AP Computer Science class. We
+                learned Java, and I excelled. After high school, I attended UCLA where I studied 
+                English Literature and Philosophy. 
+                </p>
+                <p class="grey-text text-darken-3">
+                I chose a traditional, liberal arts education 
+                because I believe the ability to think critically is one of the most essential skills
+                in today's world.  In addition, through much practice with written and verbal communication,
+                I developed strong analytical reasoning skills.  Even though I switched gears, these skills 
+                are still applicable, and will surely benefit me in my quest to become a web developer.  
+                </p>
+                <p class="grey-text text-darken-3">
+                Currently I live in Downtown Los Angeles.  My hobbies include hiking,
+                traveling, and writing code!
+                </p>
+            </div> 
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img class="top-image" src="public/home/assets/images/background.jpg"></div> <!--done-->
+    </div>
+    <div class="section" id="contact-section">
+        <div class="row container">
+            <h2 class="header contact-header">Contact</h2>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12 l6">
+                        <input id="name" type="text" >
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="col s12 l6">
+                        <span class="error" id="name-error">Please Enter Your Name</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 l6">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col s12 l6">
+                        <span class="error" id="email-error">Please Enter Your Email</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 l6">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="message" class="materialize-textarea"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <div clas="col s12 l6">
+                        <span class="error" id="message-error">Please Enter Your a Message</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div clas="col sm12 l6">
+                        <button class="btn" id="submit" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="footer-copyright grey darken-3">
+        <div class="container">
+            <div class="row footer-row">
+                <div class="col s12 grey-text  text-lighten-4 left">
+                    &copy; Copyright 2018
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

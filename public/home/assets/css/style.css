@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+.nav-wrapper {
+    background-color: black;
+}
+.top-image {
+    /* width: 100%; */
+    padding-top: 15rem; 
+}
+#logo{
+    margin: 0;
+    
+}
+.nav-wrapper #nav-mobile li a:hover {
+    color: #FF3D00;
+}
+h2 {
+    color:#FF3D00;
+}
+.responsive-img, .hangman-pic, .giphy-pic, .quiz-pic, .travel-pic, .train-pic, .crystal-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.project-images-one, .project-images-two {
+    margin-bottom: 0;
+}
+h4 {
+    margin-top: 0;
+}
+.project-names-one {
+    margin-bottom: 5rem;
+}
+.headshot {
+    max-width: 10rem;
+    float: left;
+    margin-right: .5rem;
+    border: 1px solid #757575;
+}
+.btn  {
+    background-color: #FF3D00;
+}
+.btn:hover {
+    background-color: #FF3D00;
+}
+span {
+    display: none;
+    color: red;
+}
+.footer-row {
+    margin-bottom: 0;
+}
+.unity-pic {
+    max-height: 180px;
+}
+@media screen and (max-width: 900px) {
+    .top-image {
+        padding-top: 0;
+    }
+    a #logo {
+        font-size: 1rem;
+    }
+    .hangman-pic, .giphy-pic, .quiz-pic, .travel-pic, .train-pic, .crystal-pic {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+} 

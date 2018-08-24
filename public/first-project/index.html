@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <script type="text/javascript" src="assets/javascript/slick.min.js"></script> 
+    <script src="assets/javascript/objectArray.js"></script>
+    <style>
+       
+        /* label {
+            padding-right: 1rem;
+        } */
+        /* .form-control {
+            margin-right: 1rem;
+        } */
+    </style>
+</head> 
+<body>
+    <div class="container">
+            <div class="datatool jumbotron" style="background-color:#032b2f; color:#D0d3c5;font-family: 'open sans'; text-align: center;
+            font-size: 36px; ">
+                    <!-- <div class="head">
+                        <h1>Travel App</h1>
+                        <h2>Recommendations by the Developers!</h2>
+                    </div> -->
+                <div class="autoplay">
+                        <div>
+                            <img src="assets/images/Background-Pics/Beverly-Hills.jpeg" alt="Rodeo-BH">
+                        </div>
+                        <div>
+                            <img src="assets/images/Background-Pics/badmaash2.jpg" alt="Badmash-Rest"> 
+                        </div>
+                        <div>
+                            <img src="assets/images/Background-Pics/Loews-beach-Hotel-SM.jpg" alt="Beverly-Hotel">
+                        </div>
+                        <div>
+                            <img src="assets/images/Background-Pics/PIER-SM.jpg" alt="Pier-SM"> 
+                        </div>
+                        <div>
+                            <img src="assets/images/Background-Pics/spago2.jpg" alt="Spago-Res"> 
+                        </div>   
+                        <div>
+                            <img src="assets/images/Background-Pics/Casa-de-SM.jpg" alt="Casa-hotel">
+                        </div>    
+                        <div>
+                            <img src="assets/images/Background-Pics/BOWL-HW.jpg" alt="Bowl-HW"> 
+                        </div>      
+                        <div>
+                            <img src="assets/images/Background-Pics/FreeHand-DT.jpg" alt="FreeHand-Hotel"> 
+                        </div>  
+                        <div>
+                            <img src="assets/images/Background-Pics/guelaguetza2.jpg" alt="guelaguetza-Rest"> 
+                        </div>  
+                </div>                               
+            </div>   
+            <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="errorModalLongTitle">Error</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Please Select Both a Location and a Type</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+            <div class="datatool panel panel-default">
+                <div class="panel-heading">Travel Recommendations by the Developers!</br>Select Your Preferences</div>
+
+                <form class="form">
+                    <div class = "row formRow">
+                        <div class="col-lg-3 col-sm-12">
+                            <div class="form-group mb-2">
+                                <label for="location">Location</label>
+                                <select class="form-control" id="location">
+                                    <option></option>
+                                    <option>&#9656; Downtown LA</option>
+                                    <option>&#9656; Beverly Hills</option>
+                                    <option>&#9656; Hollywood</option>
+                                    <option>&#9656; Koreatown</option>
+                                    <option>&#9656; Santa Monica</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-12">
+                            <div class="form-group mb-2">
+                                <label id="type-label" for="type">Type</label>
+                                <select class="form-control" id="type">
+                                    <option></option>
+                                    <option>&#9656; Attractions</option>
+                                    <option>&#9656; Hotels</option>
+                                    <option>&#9656; Restaurants</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-12">
+                            <div class="form-group mb-2">
+                                <label for="price">Price</label></br> 
+                                <select class="form-control" id="price">
+                                    <option>All</option>
+                                    <option>&#9656; $</option>
+                                    <option>&#9656; $$</option>
+                                    <option>&#9656; $$$</option>
+                                </select>   
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-12">
+                            <div class="form-group mb-2">
+                                <button type="submit" class="btn btn-primary" id="submit">Submit</button> 
+                            </div>  
+                        </div>
+                    </div>
+                </form>
+            </div>                   
+        
+            <div class="row map-row">
+                <div id="description" class="col-lg-6 col-sm-12">
+                    <!--where the output will go after user clicks on a marker.-->
+                    <img class="placeholder" src="assets/images/Background-Pics/LA-CITY2.png">
+                </div>
+                <div id="map" class="col-lg-6 col-sm-12 map-col"></div>
+            </div>
+    </div>             
+    <script>
+        $('.autoplay').slick({
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false,
+            prevArrow: false,
+            nextArrow: false,
+            pauseOnHower: false,
+            pauseOnFocus: false,
+        });
+    </script>                          
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3sM_RkAYxBujzi6Qcox7GmkWQ1n-16Uc&libraries=places&callback=initialMap" async defer></script>
+    <script src="assets/javascript/getPlaceData.js"></script>
+    <script src="assets/javascript/initializeMap.js"></script>
+    <script src="assets/javascript/submitHandler.js"></script>
+    <script src="assets/javascript/onMarkerClick.js"></script>
+ </body>         
+</html>
