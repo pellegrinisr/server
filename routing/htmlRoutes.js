@@ -59,4 +59,68 @@ module.exports = function(app) {
     app.get('/public/hangman/assets/sounds/:sound', function(req, res) {
         res.sendFile(path.join(__dirname, '../public/hangman/assets/sounds/', req.params.sound));
     });
-}
+
+    //giphy
+    app.get('/public/giphy/index.html', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/giphy/index.html'));
+    });
+
+    app.get('/public/giphy/assets/css/style.css', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/giphy/assets/css/style.css'));
+    });
+
+    app.get('/public/giphy/assets/javascript/app.js', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/giphy/assets/javascript/app.js'));
+    });
+
+    //trivia game
+    app.get('/public/trivia-game/index.html', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/trivia-game/index.html'));
+    });
+
+    app.get('/public/trivia-game/assets/css/:style', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/trivia-game/assets/css/', req.params.style));
+    });
+
+    app.get('/public/trivia-game/assets/javascript/:script', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/trivia-game/assets/javascript/', req.params.script));
+    });
+
+    app.get('/public/trivia-game/assets/images/question-mark-background.png', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/trivia-game/assets/images/question-mark-background.png'));
+    });
+
+    app.get('/public/trivia-game/assets/sounds/:sound', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/trivia-game/assets/sounds/', req.params.sound));
+    });
+
+    //train schedule
+    app.get("/public/train-schedule/index.html", function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/train-schedule/index.html'));
+    });
+
+    app.get('/public/train-schedule/assets/css/style.css', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/train-schedule/assets/css/style.css'));
+    });
+
+    app.get('/public/train-schedule/assets/javascript/app.js', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/train-schedule/assets/javascript/app.js'));
+    });
+
+    //crystal collector
+    app.get('/public/crystal-collector/index.html', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/crystal-collector/index.html'));
+    });
+
+    app.get('/public/crystal-collector/assets/css/:style', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/crystal-collector/assets/css/', req.params.style));
+    });
+
+    app.get('/public/crystal-collector/assets/javascript/game.js', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/crystal-collector/assets/javascript/game.js'));
+    });
+
+    app.get('/public/crystal-collector/assets/images/:img', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/crystal-collector/assets/images/', req.params.img));
+    });
+};
