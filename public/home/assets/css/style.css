@@ -23,19 +23,19 @@ main {
 h2 {
     color:#FF3D00;
 }
-.responsive-img, .hangman-pic, .giphy-pic, .quiz-pic, .travel-pic, .train-pic, .crystal-pic, .group-pic {
+.responsive-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.project-images-one, .project-images-two {
-    margin-bottom: 0;
-}
 h4 {
     margin-top: 0;
 }
-.project-images-one {
+.project-images-one, .project-images-two {
     margin-bottom: 3rem;
+}
+.project-images-three { 
+    margin-bottom: 0;
 }
 .headshot {
     max-width: 10rem;
@@ -66,10 +66,10 @@ span {
     a #logo {
         font-size: 1rem;
     }
-    .project-images-one {
+    .project-images-one, .project-images-two {
         margin-bottom: 0;
     }
-    .hangman-pic, .giphy-pic, .quiz-pic, .travel-pic, .train-pic, .crystal-pic, .group-pic {
+    .responsive-img {
         display: block;
         margin-left: auto;
         margin-right: auto;
