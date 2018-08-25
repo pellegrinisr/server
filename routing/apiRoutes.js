@@ -9,12 +9,26 @@ var connection = mysql.createConnection({
     database: 'friend_finderdb'
 });
 
+// var connection2 = mysql.createConnection({
+//     host: process.env.db_host,
+//     port: 3306,
+//     user: process.env.db_user,
+//     password: process.env.db_pass,
+//     database: 'bamazon'
+// });
+
 connection.connect(function(error) {
     if (error) throw error;
     console.log("connected as id " + connection.threadId);
 });
 
+// connection2.connect(function(error) {
+//     if (error) throw error;
+//     console.log('connection 2 connected as id ' + connection2.threadId);
+// });
+
 module.exports = function(app) {
+    //routes for friend finder
     app.get('/api/friends', function(req, res) {
         connection.query(
             'SELECT * FROM friends',

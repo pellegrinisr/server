@@ -38,10 +38,14 @@ h4 {
     margin-bottom: 0;
 }
 .headshot {
-    max-width: 10rem;
+    max-width: 12rem;
     float: left;
     margin-right: .5rem;
     border: 1px solid #757575;
+}
+.first-p {
+    padding-top: 0;
+    margin-top: 0;
 }
 .btn  {
     background-color: #FF3D00;
@@ -69,7 +73,7 @@ span {
     .project-images-one, .project-images-two {
         margin-bottom: 0;
     }
-    .responsive-img {
+    .responsive-imgc {
         display: block;
         margin-left: auto;
         margin-right: auto;
