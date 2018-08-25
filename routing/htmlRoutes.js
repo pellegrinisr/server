@@ -123,4 +123,15 @@ module.exports = function(app) {
     app.get('/public/crystal-collector/assets/images/:img', function(req, res) {
         res.sendFile(path.join(__dirname, '../public/crystal-collector/assets/images/', req.params.img));
     });
+
+    //friend finder
+    app.get('/public/friend-finder/app/home.html', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/friend-finder/app/home.html'));
+    });
+
+    app.get('/public/friend-finder/app/survey.html', function(req, res) {
+        res.sendFile(path.join(__dirname, '../public/friend-finder/app/survey.html'));
+    });
+
+
 };
