@@ -1,33 +1,68 @@
+//for burger app
+var burger = require('../public/burger/models/burger.js');
+
 //for friend finder
-var mysql = require('mysql');
+var connection = require('../public/friend-finder/config/connection.js');
 
-var connection = mysql.createConnection({
-    host: process.env.db_host,
-    port: 3306,
-    user: process.env.db_user,
-    password: process.env.db_pass,
-    database: 'friend_finderdb'
-});
-
-// var connection2 = mysql.createConnection({
-//     host: process.env.db_host,
-//     port: 3306,
-//     user: process.env.db_user,
-//     password: process.env.db_pass,
-//     database: 'bamazon'
-// });
-
-connection.connect(function(error) {
-    if (error) throw error;
-    console.log("connected as id " + connection.threadId);
-});
-
-// connection2.connect(function(error) {
-//     if (error) throw error;
-//     console.log('connection 2 connected as id ' + connection2.threadId);
-// });
 
 module.exports = function(app) {
+    //routes for burger app
+    
+    //Create
+    app.post('/api/burgers', function(req, res) {
+        console.log(req.body.burger_name, req.body.devoured);
+        burger.create(
+            //create: function(colsArray, valsArray, cb)
+            ['burger_name', 'devoured', 'image_url'],
+            [req.body.burger_name, req.body.devoured, req.body.image_url],
+            function(data) {
+                res.json({id: data.insertId});
+            }
+        );
+    });
+
+    //Read
+    app.get('/burgers', function(req, res) {
+        console.log('route hit');
+        burger.all(function(data) {
+            var handlebarsObj = {
+                burgers: data 
+            };
+            console.log(handlebarsObj);
+            res.render('burger-index', handlebarsObj);
+        });
+    });
+
+    //Update
+    app.put('/api/burgers/:id', function(req, res) {
+        var condition = "id=" + req.params.id;
+        // update: function(colValObj, condition, cb)
+        burger.update(
+            {devoured: req.body.devoured},
+            condition,
+            function(data) {
+                if (data.affectedRows === 0) {
+                    return res.status(404).end();
+                } else {
+                    return res.status(200).end();
+                }
+            }
+        );
+    });
+
+    //Delete
+    app.delete('/api/burgers/:id', function(req, res) {
+        var condition = "id=" + req.params.id;
+        //delete: function(condition, cb)
+        burger.delete(condition, function(data) {
+            if (data.affectedRows === 0) {
+                return res.status(404).end();
+            } else {
+                return res.status(200).end();
+            }
+        });
+    });
+
     //routes for friend finder
     app.get('/api/friends', function(req, res) {
         connection.query(
