@@ -22,7 +22,7 @@ module.exports = function(app) {
     });
 
     //Read
-    app.get('/burgers', function(req, res) {
+    app.get('/api/burgers', function(req, res) {
         console.log('route hit');
         burger.all(function(data) {
             var handlebarsObj = {
