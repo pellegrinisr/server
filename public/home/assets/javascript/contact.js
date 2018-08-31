@@ -20,6 +20,7 @@ $(document).ready(function() {
         var userName = $('#name').val().trim();
         var userEmail = $('#email').val().trim();
         var userComment = $('#message').val().trim(); 
+        console.log(userName, userEmail, userComment);
         if (userName === '') {
             $('#name-error').css('display', 'inline');
             isValid = false;
@@ -39,6 +40,7 @@ $(document).ready(function() {
             $("#message-error").css('display', 'none');
         }
         if (isValid === true) {
+            console.log('isvalid == true')
             // myDBRef.push().set({
             //     name: userName,
             //     email: userEmail,
@@ -51,7 +53,7 @@ $(document).ready(function() {
             }).then(function(result) {
                 console.log(result);
                 console.log('one item added');
-            })
+            });
     
             $('#name').val('');
             $('#email').val('');
