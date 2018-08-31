@@ -1,11 +1,22 @@
 //for burger app
 var burger = require('../public/burger/models/burger.js');
-
 //for friend finder
 var friendFinder = require('../public/friend-finder/models/friendFinder.js');
-
+var contact = require('../public/home/models/contact.js');
 
 module.exports = function(app) {
+    //post route for contact form
+    app.post('/api/home/contacts', function(req, res) {
+        contact.create(
+            ['name', 'email', 'message'],
+            [req.body.name, req.body.email, req.body.message],
+            function(data) {
+                res.json({id: data.insertId});
+            }
+        );
+    });
+    
+    
     //routes for burger app
     
     //Create

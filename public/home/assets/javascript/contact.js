@@ -1,16 +1,17 @@
+
 $(document).ready(function() {
-    var config = {
-        apiKey: "AIzaSyAo7WBaOtCGkEqZn0LCl_1uoRpP0cKKdEA",
-        authDomain: "portfolioproject-17fea.firebaseapp.com",
-        databaseURL: "https://portfolioproject-17fea.firebaseio.com",
-        projectId: "portfolioproject-17fea",
-        storageBucket: "portfolioproject-17fea.appspot.com",
-        messagingSenderId: "974870010240"
-    };
-    firebase.initializeApp(config);
+    // var config = {
+    //     apiKey: "AIzaSyAo7WBaOtCGkEqZn0LCl_1uoRpP0cKKdEA",
+    //     authDomain: "portfolioproject-17fea.firebaseapp.com",
+    //     databaseURL: "https://portfolioproject-17fea.firebaseio.com",
+    //     projectId: "portfolioproject-17fea",
+    //     storageBucket: "portfolioproject-17fea.appspot.com",
+    //     messagingSenderId: "974870010240"
+    // };
+    // firebase.initializeApp(config);
     
-    var database = firebase.database();
-    var myDBRef = database.ref();
+    // var database = firebase.database();
+    // var myDBRef = database.ref();
 
     $('#submit').on('click', function(event) {
         event.preventDefault();
@@ -38,11 +39,19 @@ $(document).ready(function() {
             $("#message-error").css('display', 'none');
         }
         if (isValid === true) {
-            myDBRef.push().set({
-                name: userName,
-                email: userEmail,
-                comment: userComment
-            });
+            // myDBRef.push().set({
+            //     name: userName,
+            //     email: userEmail,
+            //     comment: userComment
+            // });
+            $.post('/api/home/contacts', {
+                name: userName, 
+                email: userEmail, 
+                message: userComment
+            }).then(function(result) {
+                console.log(result);
+                console.log('one item added');
+            })
     
             $('#name').val('');
             $('#email').val('');
@@ -52,9 +61,9 @@ $(document).ready(function() {
         
     });
 
-    myDBRef.on('value', function(snapshot) {
-        console.log(snapshot);
-    }, function(errorObject) {
-        console.log('there was an error: ' + errorObject.code);
-    });
+    // myDBRef.on('value', function(snapshot) {
+    //     console.log(snapshot);
+    // }, function(errorObject) {
+    //     console.log('there was an error: ' + errorObject.code);
+    // });
 });
