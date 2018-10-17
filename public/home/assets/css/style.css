@@ -31,10 +31,10 @@ h2 {
 h4 {
     margin-top: 0;
 }
-.project-images-one, .project-images-two {
+.project-images-one, .project-images-two, .project-images-three {
     margin-bottom: 3rem;
 }
-.project-images-three { 
+.project-images-four { 
     margin-bottom: 0;
 }
 .headshot {
